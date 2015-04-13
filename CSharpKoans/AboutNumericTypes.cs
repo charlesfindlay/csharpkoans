@@ -11,7 +11,7 @@ namespace CSharpKoans
             var i = 42;
 
             // What type is i?
-            Assert.AreEqual(typeof(string), i.GetType());
+            Assert.AreEqual(typeof(int), i.GetType());
         }
 
         [Koan]
@@ -22,7 +22,7 @@ namespace CSharpKoans
 
             int finalValue = default(int);
             // uncomment this line and fix the compiler error:
-            //finalValue = implicitlyConverted;
+            finalValue = (int)implicitlyConverted;
 
             Assert.AreEqual(initialValue, finalValue);
         }
@@ -33,7 +33,7 @@ namespace CSharpKoans
             int numerator = 27;
             int denominator = 5;
 
-            int expected = default(int);
+            int expected = 5;
             int actual = numerator / denominator;
             Assert.AreEqual(expected, actual);
         }
@@ -44,7 +44,7 @@ namespace CSharpKoans
             double numerator = 27;
             double denominator = 5;
 
-            double expected = default(double);
+            double expected = 5.4;
             double actual = numerator / denominator;
             Assert.AreEqual(expected, actual);
         }
@@ -60,9 +60,9 @@ namespace CSharpKoans
             // rewrite this loop to minimize the accumulating
             // rounding error
             for (int i = 0; i < 1000000; i++)
-            {
+            {                
+                total = increment * (i +1);
                 values[i] = total;
-                total += increment;
             }
 
             Assert.AreEqual(1000.0, values[999999]);
@@ -78,10 +78,10 @@ namespace CSharpKoans
 
             j -= 200;
 
-            Assert.AreEqual(default(int), i);
+            Assert.AreEqual(-75, i);
             // You may need to look at the value of j in the debugger to
             // fix this one:
-            Assert.AreEqual(default(uint), j);
+            Assert.AreEqual(4294967146, j);
         }
 
         [Koan]
@@ -93,7 +93,7 @@ namespace CSharpKoans
             var k = i + j;
 
             // What type is k?
-            Assert.AreEqual(typeof(int), k.GetType());
+            Assert.AreEqual(typeof(long), k.GetType());
 
         }
     }
