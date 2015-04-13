@@ -20,7 +20,7 @@ namespace CSharpKoans
         public void AssertTruth()
         {  
             // This should be true
-             Assert.IsTrue(false);
+             Assert.IsTrue(true);
         }
 
         // Enlightenment may be more easily achieved with appropriate  messages. 
